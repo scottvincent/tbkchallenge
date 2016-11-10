@@ -194,6 +194,7 @@ body {
   border: none;
   color: #b51a46;
   cursor: pointer;
+  z-index: 10;
 }
 #close:hover {
   color: #5c0d23;
