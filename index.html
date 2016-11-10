@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en-us">
+	<head>
+		<title>Scott Vincent | tbk challenge</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+		<link href="favicon.ico" rel="shortcut icon" type="image/x-icon">
+		<link rel="stylesheet" href="styles.css">
+		<link href="https://fonts.googleapis.com/css?family=Didact+Gothic|Playfair+Display:400,400i" rel="stylesheet">
+	</head>
+	<body>
+		<div class="container">
+			<h1>Scott Vincent, tbk challenge. </h1>
+		</div>
+		<div class="modal" id="theModal">
+			<div class="modal-content">
+				<button type="button" id="close">&times;</button>
+				<div class="subtitle">
+					YOU ARE CORDIALLY INVITED<br>
+					TO THE LAUNCH
+				</div>
+
+				<div class="italic">of the</div>
+
+				<div class="logo">NEW<br><span>COMPANY</span><br>WEBSITE</div>
+
+				<p>Lorem ipsum dolor sit amet, vix suas liber conclusionemque eu. Ad quo esse purto eros, nemore volutpat ut quo, copiosae concludaturque nam in.</p>
+				<hr>
+				<div class="subtitle">
+					AD EST ODIO NOSTER
+				</div>
+				<ul>
+					<li>Ex vis amet graeci accumsan</li>
+					<li>Civibus iracundia quo ad</li>
+					<li>Eu impetus feugiat civibus qui</li>
+					<li>Mel in mucius argumentum, an accumsan petentium vim</li>
+					<li>Vim at rationibus interesset</li>
+				</ul>
+
+			</div>
+			<form class="modal-form">
+				<div class="form-title">
+					GET YOUR FOOT IN THE DOOR
+				</div>
+				<p>Know the moment our new website goes live.</p>
+				<div class="inline-inputs">
+					<input type="text" name="Name" placeholder="Name">
+					<input type="email" name="Email" placeholder="Email">
+					<button type="submit">SUBMIT</button>
+				</div>
+				<input type="checkbox" name="disclaimer"><label for="disclaimer">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</label>
+			</form>
+			<div id="right-shaving"></div>
+		</div>
+		<div id="left-chisel"></div>
+		
+		<div id="backdrop"></div>
+
+		<script type="text/javascript">
+			var modal = document.getElementById('theModal');
+			var backdrop = document.getElementById('backdrop');
+			var chisel = document.getElementById('left-chisel');
+			var shaving = document.getElementById('right-shaving');
+
+			window.onload = function() {
+				if(localStorage.getItem("Closed") == null){
+					setTimeout(function() {
+						modal.style.display = 'block';
+						backdrop.style.display = 'block';
+						chisel.style.display = 'block';
+					}, 2990);
+					setTimeout(function() {
+						modal.style.opacity = '1';
+						backdrop.style.opacity = '1';
+						chisel.style.opacity = '1';
+					}, 3000);
+
+				}
+			}
+
+			document.getElementById('close').onclick = function(){
+				localStorage.setItem("Closed", "StopIt");
+				modal.style.opacity = '0';
+				backdrop.style.opacity = '0';
+				chisel.style.opacity = '0';
+				setTimeout(function() {
+					modal.style.display = 'none';
+					backdrop.style.display = 'none';
+					chisel.style.display = 'none';
+				}, 300);
+			}
+
+			window.onscroll = function(){
+				var windowYOffset = window.pageYOffset;
+				var leftBackgrounPos = "0 " + (500 - windowYOffset * 0.5) + "px";
+				var rightBackgrounPos = "0 " + (100 + windowYOffset * 1.2) + "px";
+
+				chisel.style.backgroundPosition = leftBackgrounPos;
+				shaving.style.backgroundPosition = rightBackgrounPos;
+			};
+		</script>
+	</body>
+</html>
